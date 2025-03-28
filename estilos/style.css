@@ -35,7 +35,7 @@ section{
 
 /*------------------FORMULÁRIO------------------ */
 form{
-    width: 70vw;
+    width: 50vw;
     height: 95vh;
     padding: 1rem;
     display: flex;
@@ -54,10 +54,11 @@ form{
     display: flex;
     gap: 1rem;
 }
-.termo-maquina{
-    width: 40%;
+
+.termo-maquina, .termo-colaborador{
+    width: 50%;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,14 +66,17 @@ form{
 }
 
 .termo-colaborador{
-    width: 60%;
+    width: 50%;
     height: 100%;
-    border: 1px solid black;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.471);
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.inputs-maquina{
+    gap: 1rem;
+}
 .inputs-maquina, .inputs-colaborador{
     width: 70%;
     display: flex;
@@ -80,6 +84,9 @@ form{
     align-items: center;
     gap: 1rem;
     /* border: 1px solid black; */
+}
+.inputs-maquina{
+    gap: 2.2rem;
 }
 .gp-input-maquina{
     width: 60%;
@@ -108,6 +115,16 @@ label{
 }
 
 .gp-acessorios > input:focus{
+    outline: none;
+}
+
+.empresa-contratante{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.empresa > input {
     outline: none;
 }
 
