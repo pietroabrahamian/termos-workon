@@ -1,0 +1,233 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: workon;
+    /* font-family: "Poppins", sans-serif; */
+}
+/*------------------DECLARANDO CORES FIXAS------------------ */
+:root{
+    --cor-principal: #047cc7;
+    --contraste-principal: #035d95;
+}
+
+/*------------------MAIN------------------ */
+main{
+    width: 100vw;
+    height: 90vh;
+}
+
+section{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*------------------FORMULÁRIO------------------ */
+form{
+    width: 70vw;
+    height: 95vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center ;
+    gap: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    border-radius: 15px;
+}
+
+/*------------------DENTRO DO FORMULARIO------------------ */ 
+.termo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+}
+.termo-maquina{
+    width: 40%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.termo-colaborador{
+    width: 60%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs-maquina, .inputs-colaborador{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* border: 1px solid black; */
+}
+.gp-input-maquina{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.gp-input-maquina > input{
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 5px ;
+    border: 0.5px solid rgba(0, 0, 0, 0.471);
+}
+input:focus{
+    outline: 2px solid var(--contraste-principal);
+}
+label{
+    margin: 0.2rem;
+}
+.gp-acessorios{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gp-acessorios > input:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input{
+    width: 120%;
+    height: 32px;
+}
+.inputs{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inputs-colaborador, .inputs-maquina{
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.inputs-maquina{
+    gap: 1rem;
+}
+
+.form-grupo-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-left: 0.2rem;
+}
+input{
+    border-radius: 5px;
+    padding: 0.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.312);
+}
+input:focus{
+    border: #035d95;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.314);
+}
+
+.acessorios {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    gap: 0.3rem;
+}
+.gp-acessorio{
+    width: 33%;
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: space-between;
+}
+.gp-acessorio > input{
+    width: fit-content;
+    height: fit-content;
+    box-shadow: none;
+} */
+
+/*------------------BUTTON------------------ */ 
+button {
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    background-color: var(--cor-principal);
+    color: white;
+    transition: 0.5s;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-size: cover; 
+}
+button::before{
+    content: "Gerar Termo";
+    display: block;
+}
+button:hover{
+    background-image: url(/coding/assets/logo_workon_negativo.png);
+    background-position: center;
+    /* background-color: var(--contraste-principal); */
+    color: transparent;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+button::after{
+    content: "";
+}
