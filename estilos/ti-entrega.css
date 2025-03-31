@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: workon;
+    /* font-family: "Poppins", sans-serif; */
+}
+/*------------------DECLARANDO CORES FIXAS------------------ */
+:root{
+    --cor-principal: #047cc7;
+    --contraste-principal: #035d95;
+}
+
+/*------------------MAIN------------------ */
+main{
+    width: 100vw;
+    height: 90vh;
+}
+
+section{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+   position: absolute;
+   left: 2vw; 
+   top: 2vh;
+
+}
+
+/*------------------FORMULÁRIO------------------ */
+form{
+    width: 80vw;
+    height: 95vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center ;
+    gap: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    border-radius: 15px;
+}
+
+/*------------------DENTRO DO FORMULARIO------------------ */ 
+.termo{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    gap: 1rem;
+}
+
+.termo-maquina, .termo-colaborador{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.termo-colaborador{
+    width: 50%;
+    height: 100%;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.471);
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs-maquina{
+    height: 100%;
+    gap: 1rem;
+}
+.inputs-maquina, .inputs-colaborador{
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1rem; */
+    /* border: 1px solid black; */
+}
+.inputs-maquina{
+    /* gap: 2.2rem; */
+}
+.gp-input-maquina{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.gp-input-maquina > input{
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 5px ;
+    border: 0.5px solid rgba(0, 0, 0, 0.471);
+}
+input:focus{
+    outline: 2px solid var(--contraste-principal);
+}
+label{
+    margin: 0.2rem;
+}
+.gp-acessorios{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gp-acessorios > input:focus{
+    outline: none;
+}
+
+.empresa-contratante{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.empresa > input {
+    outline: none;
+}
+
+/*------------------BUTTON------------------ */ 
+button {
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    background-color: var(--cor-principal);
+    color: white;
+    transition: 0.5s;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-size: cover; 
+}
+button::before{
+    content: "Gerar Termo";
+    display: block;
+}
+button:hover{
+    background-image: url(/assets/img/logo_workon_negativo.png);
+    background-position: center;
+    /* background-color: var(--contraste-principal); */
+    color: transparent;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+button::after{
+    content: "";
+}

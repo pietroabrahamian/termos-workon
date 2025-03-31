@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+@font-face {
+    font-family: "workon-bold";
+    src: url(/fonte_work/Arboria-Bold.ttf);
+}
+*{
+    font-family: "workon";
+}
+span{
+    font-family: "workon-bold";
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
