@@ -10,6 +10,7 @@
 <body>
     <main>
         <section>
+            <a href="entrega-imprimir.html"></a>
             <a href=""><img src="/assets/img/arrow-right.png" alt="" width="50%"></a>
             <form id="formulario">
                 <h1>Termo de Entrega de Notebook - TI</h1>
@@ -41,7 +42,7 @@
                             <div class="gp-input-maquina">
                                 <div class="gp-acessorios">
                                     <label for="carregador">Carregador</label>
-                                    <input type="checkbox" name="carregador" id="carregador">
+                                    <input type="checkbox" name="carregador" id="carregador" value="Sim">
                                 </div>
                                 <div class="gp-acessorios">
                                     <label for="mochila">Mochila</label>
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="gp-acessorios">
                                     <label for="mouse">Mouse</label>
-                                    <input type="checkbox" name="mochila" id="mochila">
+                                    <input type="checkbox" name="mouse" id="mochila">
                                 </div>
                             </div>
                             
@@ -86,32 +87,42 @@
                                 <input type="text" name="setor" id="setor" placeholder="Operacional, R&S...">
                             </div>
                         </div>
-                        <div class="empresa-contratante">
+                        <!-- <div class="empresa-contratante">
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="people">
+                                <input type="radio" name="escolha-empresa" id="people" value="PEOPLE">
                                 <label for="people">PEOPLE</label>
                             </div>
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="smart-trade">
+                                <input type="radio" name="escolha-empresa" id="smart-trade" value="SMART TRADE">
                                 <label for="smart-trade">SMART TRADE</label>
                             </div>
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="wopco">
+                                <input type="radio" name="escolha-empresa" id="wopco" value="WOP CENTRO OESTE"> 
                                 <label for="wopco">WOP CENTRO OESTE</label>
                             </div>
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="onjob">
+                                <input type="radio" name="escolha-empresa" id="onjob" value="ON JOB">
                                 <label for="onjob">ON JOB</label>
                             </div>
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="wopne">
+                                <input type="radio" name="escolha-empresa" id="wopne" value="WOP NORTE/NE">
                                 <label for="wopne">WOP NORTE/NE</label>
                             </div>
                             <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="instore">
+                                <input type="radio" name="escolha-empresa" id="instore" value="INSTORE">
                                 <label for="instore">INSTORE</label>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
+                        <label for="escolha-empresa">Empresa Contratante:</label>
+                        <select id="escolha-empresa">
+                            <option value="">Selecione uma empresa</option>
+                            <option value="PEOPLE">PEOPLE</option>
+                            <option value="SMART TRADE">SMART TRADE</option>
+                            <option value="WOP CENTRO OESTE">WOP CENTRO OESTE</option>
+                            <option value="ON JOB">ON JOB</option>
+                            <option value="WOP NORTE/NE">WOP NORTE/NE</option>
+                            <option value="INSTORE">INSTORE</option>
+                        </select>
                     </div>
                 </div>
                 <button type="submit"></button>
@@ -120,6 +131,6 @@
             </form>
         </section>
     </main>
-    <script src="ti-entrega.js"></script>
+    <script src="/ti-entrega.js"></script>
 </body>
 </html>
