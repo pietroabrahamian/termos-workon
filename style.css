@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: workon;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, 
+    #0083B1, #0076A9, #006DA8, #006CA2, #00689B, 
+    #00629D, #0067A3, #006198, #005C9A, #005A94);
+}
