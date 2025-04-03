@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilos/ti-entrega.css">
+    <link rel="stylesheet" href="/estilos/ti/ti-entrega.css">
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <title>TI - Entrega</title>
 </head>
@@ -11,7 +11,7 @@
     <main>
         <section>
             <a href="entrega-imprimir.html"></a>
-            <a href=""><img src="/assets/img/arrow-right.png" alt="" width="50%"></a>
+            <a href=""><img src="/assets/img/arrow-right.png" alt="" width="50%" class="voltar"></a>
             <form id="formulario">
                 <h1>Termo de Entrega de Notebook - TI</h1>
                 <div class="termo">
@@ -48,10 +48,6 @@
                                     <label for="mochila">Mochila</label>
                                     <input type="checkbox" name="mochila" id="mochila">
                                 </div>
-                                <div class="gp-acessorios">
-                                    <label for="mouse">Mouse</label>
-                                    <input type="checkbox" name="mouse" id="mochila">
-                                </div>
                             </div>
                             
                         </div>
@@ -87,32 +83,6 @@
                                 <input type="text" name="setor" id="setor" placeholder="Operacional, R&S...">
                             </div>
                         </div>
-                        <!-- <div class="empresa-contratante">
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="people" value="PEOPLE">
-                                <label for="people">PEOPLE</label>
-                            </div>
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="smart-trade" value="SMART TRADE">
-                                <label for="smart-trade">SMART TRADE</label>
-                            </div>
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="wopco" value="WOP CENTRO OESTE"> 
-                                <label for="wopco">WOP CENTRO OESTE</label>
-                            </div>
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="onjob" value="ON JOB">
-                                <label for="onjob">ON JOB</label>
-                            </div>
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="wopne" value="WOP NORTE/NE">
-                                <label for="wopne">WOP NORTE/NE</label>
-                            </div>
-                            <div class="empresa">
-                                <input type="radio" name="escolha-empresa" id="instore" value="INSTORE">
-                                <label for="instore">INSTORE</label>
-                            </div> -->
-                        <!-- </div> -->
                         <label for="escolha-empresa">Empresa Contratante:</label>
                         <select id="escolha-empresa">
                             <option value="">Selecione uma empresa</option>
@@ -123,14 +93,26 @@
                             <option value="WOP NORTE/NE">WOP NORTE/NE</option>
                             <option value="INSTORE">INSTORE</option>
                         </select>
+                        <div id="box-flutuante-assinatura">
+                            <div id="assinatura">
+                                <p>Assine abaixo:</p>
+                                <canvas id="assinaturaCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+                                <br>
+                                <div class="buttons-assinatura">
+                                    <button id="limparAssinatura">Limpar</button>
+                                    <button id="salvarAssinatura">Salvar Assinatura</button>
+                                </div>
+                                <button id="netPageImprimir">Imprimir Termo</button>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-                <button type="submit"></button>
-                <p id="resultado"></p>
+                <button type="submit" id="submit"></button>
                  
             </form>
         </section>
     </main>
-    <script src="/ti-entrega.js"></script>
+    <script src="/js/ti/ti-entrega.js"></script>
 </body>
 </html>

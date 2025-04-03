@@ -14,6 +14,7 @@ let marca = localStorage.getItem("marca") || "Não informado";
 let modelo = localStorage.getItem("modelo") || "Não informado";
 let carregador = localStorage.getItem("carregador") || "Não informado";
 let mochila = localStorage.getItem("mochila") || "Não informado";
+let assinatura = localStorage.getItem("assinaturaColaborador") || "";
 
     document.title = `${nome} - Termo de Entrega`
     divMain = document.getElementById("main").innerHTML = ` <p>Eu, <span>${nome}</span>, portador do RG nº <span>${rg}</span>, CPF:  <span>${cpf}</span> funcionário da empresa: <span>${escolhaEmpresa}</span>,  no exercício da função de    <span> ${funcao}</span> do setor <span> ${setor}</span>, declaro que recebi nesta data, user ID de rede corporativa   em perfeitas condições de uso, equipamentos e ferramentas de uso permanente ou temporário, constante na relação que compõe este Termo, para uso exclusivo da minha função, independentemente do regime de trabalho ao qual esteja vinculado (permanente na sede da empresa e/ou residência ou híbrido).
@@ -68,5 +69,6 @@ let mochila = localStorage.getItem("mochila") || "Não informado";
                 <td>${mochila}</td>
             </tr>
         </table>
+        <img src="${assinatura}">
         `
 });

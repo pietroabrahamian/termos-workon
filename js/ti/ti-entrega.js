@@ -63,11 +63,74 @@ document.addEventListener("DOMContentLoaded", function(){
         let mochila = document.getElementById("mochila");
         localStorage.setItem("mochila", mochila.checked ? "Sim" : "Não");
 
+        let boxFlutuante = document.getElementById("box-flutuante-assinatura")
+        boxFlutuante.style.display = "flex"
 
+        // setTimeout(() => {
+        //     window.location.href = "/setores/ti/entrega-imprimir.html";
+        // }, 100);
+    });
+
+    let buttonNetPageImprimir = document.getElementById("netPageImprimir")
+    document.getElementById("netPageImprimir").addEventListener("click", () => {
         setTimeout(() => {
             window.location.href = "/setores/ti/entrega-imprimir.html";
         }, 100);
     });
+});
 
-    let p_button = document.getElementsByClassName("p")
+// ASSINATURA COLABORADOR
+
+document.addEventListener("DOMContentLoaded", function () {
+    let canvas = document.getElementById("assinaturaCanvas");
+    let ctx = canvas.getContext("2d");
+    let desenhando = false;
+
+
+    // Inicia o desenho
+    canvas.addEventListener("mousedown", (e) => {
+        desenhando = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    // Continua desenhando
+    canvas.addEventListener("mousemove", (e) => {
+        if (!desenhando) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    });
+
+    // Para o desenho
+    canvas.addEventListener("mouseup", () => {
+        desenhando = false;
+    });
+
+    // Botão para limpar a assinatura
+    document.getElementById("limparAssinatura").addEventListener("click", () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    // Botão para salvar a assinatura no localStorage
+    document.getElementById("salvarAssinatura").addEventListener("click", () => {
+        let assinaturaDataURL = canvas.toDataURL(); // Converte para imagem
+        localStorage.setItem("assinaturaColaborador", assinaturaDataURL);
+        alert("Assinatura salva com sucesso!");
+    });
+
+    document.getElementById("box-flutuante-assinatura").addEventListener("click", function(event){
+        if(!canvas.contains(event.target)) {
+            document.getElementById("box-flutuante-assinatura").style.display = "none"
+        }
+    });
+
+    // Recuperar assinatura salva, se houver
+    let assinaturaSalva = localStorage.getItem("assinaturaColaborador");
+    if (assinaturaSalva) {
+        let img = new Image();
+        img.src = assinaturaSalva;
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        };
+    }
 });
