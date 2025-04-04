@@ -65,10 +65,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
         let boxFlutuante = document.getElementById("box-flutuante-assinatura")
         boxFlutuante.style.display = "flex"
-
-        // setTimeout(() => {
-        //     window.location.href = "/setores/ti/entrega-imprimir.html";
-        // }, 100);
     });
 
     let buttonNetPageImprimir = document.getElementById("netPageImprimir")
