@@ -46,8 +46,8 @@ h1 img{
     
 }
 .info-mais{
-    width: 100%;
-    height: 10%;
+    width: 20%;
+    height: 7%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,25 +64,34 @@ h1 img{
     border-bottom-left-radius: 5px;
 }
 .add-termo{
-    justify-content: center;
-    width: 10%;
-    padding: 0.2rem;
-    border: 1px solid #00FF08;
-    border-radius: 20px;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+#addTermo {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
+    
 }
-.add-termo:hover{
+#addTermo:hover{
     color: #00FF08;
     transition: 0.3s;
 }
-.add-termo p {
+#imgAddTermo {
     display: flex;
-    justify-content: space-evenly;
-}
-.add-termo img{
     width: 30%;
 }
+
 .box-flutuante-add-termo{
     width: 28vw;
     height: 18vh;
@@ -90,8 +99,7 @@ h1 img{
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    /* background-color: #01a3dd; */
+    gap: 0.2rem;
     background-color: #00ca4de0;
     color: white;
     position: absolute;
@@ -101,6 +109,18 @@ h1 img{
 }
 .box-flutuante-add-termo span {
     font-weight: bold;
+}
+#fecharAddTermo{
+    width: 6%;
+    position: relative;
+    top: 5%;
+    left: -46%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#fecharAddTermo:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 
@@ -200,6 +220,7 @@ h1 img{
     justify-content: space-between;
     align-items: end;
 }
+
 .button-termo:hover{
     transform: scale(0.9);
     transition: transform 0.7s;

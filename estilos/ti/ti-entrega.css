@@ -120,17 +120,19 @@ label{
     outline: none;
 }
 
-.empresa-contratante{
-    width: fit-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+select{
+    border-radius: 5px;
+    padding: 0.3rem;
+    transition: 0.2s;
 }
-.empresa > input {
-    outline: none;
+select:hover{
+    /* box-shadow: 2px 5px 1px rgba(0, 0, 0, 0.504); */
+    box-shadow: 3px 5px 1px #C8C8C8;
+    transform: translateY(-10px);
+    transition: 0.2s;
 }
 
-/*------------------BUTTON------------------ */ 
+/* -------------BUTTON------------------ */
 #submit {
     width: 10rem;
     border: none;

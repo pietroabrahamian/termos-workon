@@ -1,20 +1,20 @@
-document.addEventListener("DOMContentLoaded", function(){
-// Obtendo os dados do localStorage (com fallback para evitar valores null)
-let nome = localStorage.getItem("nomeColaborador") || "Nome não encontrado";
-let email = localStorage.getItem("emailColaborador") || "E-mail não informado";
-let rg = localStorage.getItem("rg") || "Não informado";
-let cpf = localStorage.getItem("cpf") || "Não informado";
-let funcao = localStorage.getItem("funcao") || "Não informado";
-let setor = localStorage.getItem("setor") || "Não informado";
-let escolhaEmpresa = localStorage.getItem("escolhaEmpresa") || "Empresa não informada";
-let nomeMaquina = localStorage.getItem("nomeMaquina") || "Não informado";
-let patrimonio = localStorage.getItem("patrimonio") || "Não informado";
-let locadora = localStorage.getItem("locadora") || "Não informado";
-let marca = localStorage.getItem("marca") || "Não informado";
-let modelo = localStorage.getItem("modelo") || "Não informado";
-let carregador = localStorage.getItem("carregador") || "Não informado";
-let mochila = localStorage.getItem("mochila") || "Não informado";
-let assinatura = localStorage.getItem("assinaturaColaborador") || "";
+document.addEventListener("DOMContentLoaded", async function(){
+    // Obtendo os dados do localStorage (com fallback para evitar valores null)
+    let nome = localStorage.getItem("nomeColaborador") || "Nome não encontrado";
+    let email = localStorage.getItem("emailColaborador") || "E-mail não informado";
+    let rg = localStorage.getItem("rg") || "Não informado";
+    let cpf = localStorage.getItem("cpf") || "Não informado";
+    let funcao = localStorage.getItem("funcao") || "Não informado";
+    let setor = localStorage.getItem("setor") || "Não informado";
+    let escolhaEmpresa = localStorage.getItem("escolhaEmpresa") || "Empresa não informada";
+    let nomeMaquina = localStorage.getItem("nomeMaquina") || "Não informado";
+    let patrimonio = localStorage.getItem("patrimonio") || "Não informado";
+    let locadora = localStorage.getItem("locadora") || "Não informado";
+    let marca = localStorage.getItem("marca") || "Não informado";
+    let modelo = localStorage.getItem("modelo") || "Não informado";
+    let carregador = localStorage.getItem("carregador") || "Não informado";
+    let mochila = localStorage.getItem("mochila") || "Não informado";
+    let assinatura = localStorage.getItem("assinaturaColaborador") || "";
 
     document.title = `${nome} - Termo de Entrega`
     divMain = document.getElementById("main").innerHTML = ` <p>Eu, <span>${nome}</span>, portador do RG nº <span>${rg}</span>, CPF:  <span>${cpf}</span> funcionário da empresa: <span>${escolhaEmpresa}</span>,  no exercício da função de    <span> ${funcao}</span> do setor <span> ${setor}</span>, declaro que recebi nesta data, user ID de rede corporativa   em perfeitas condições de uso, equipamentos e ferramentas de uso permanente ou temporário, constante na relação que compõe este Termo, para uso exclusivo da minha função, independentemente do regime de trabalho ao qual esteja vinculado (permanente na sede da empresa e/ou residência ou híbrido).
@@ -71,4 +71,94 @@ let assinatura = localStorage.getItem("assinaturaColaborador") || "";
         </table>
         <img src="${assinatura}">
         `
+    
+    // let element = document.body;
+
+    //     let opt = {
+    //     margin:       0.5,
+    //     filename:     `${nome} - entrega.pdf`,
+    //     image:        { type: 'jpeg', quality: 0.98 },
+    //     html2canvas:  { scale: 2 },
+    //     jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    //     };
+
+    //      html2pdf().set(opt).from(element).save();
+
+
+  
+    const CLIENT_ID = '49033420906-kcfbk77167nnf3i9ifvmak138hc42l5u.apps.googleusercontent.com'; // Substitua pelo seu ID real
+    const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+
+    function initGoogleAPI() {
+        gapi.load("client:auth2", () => {
+            gapi.auth2.init({ client_id: CLIENT_ID });
+        });
+    }
+
+    async function authenticate() {
+        await gapi.auth2.getAuthInstance().signIn({ scope: SCOPES });
+        console.log("Autenticado com sucesso!");
+    }
+
+    async function loadClient() {
+        await gapi.client.load("https://content.googleapis.com/discovery/v1/apis/drive/v3/rest");
+        console.log("Cliente da API carregado");
+    }
+
+    function uploadFile(blob, nomeArquivo) {
+        const fileMetadata = {
+            name: nomeArquivo,
+            mimeType: 'application/pdf'
+        };
+
+        const form = new FormData();
+        form.append("metadata", new Blob([JSON.stringify(fileMetadata)], { type: "application/json" }));
+        form.append("file", blob);
+
+        fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
+            method: "POST",
+            headers: new Headers({ "Authorization": "Bearer " + gapi.auth.getToken().access_token }),
+            body: form,
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Arquivo enviado:", data);
+                alert("PDF enviado para o Google Drive com sucesso!");
+            })
+            .catch(error => console.error("Erro ao enviar:", error));
+    }
+
+    // Inicializa o Google API
+    initGoogleAPI();
+
+    // ... (os demais dados iguais ao seu original)
+
+    // Monta o termo (seu conteúdo continua igual)
+    document.title = `${nome} - Termo de Entrega`;
+    // divMain = document.getElementById("main").innerHTML = `...seu HTML...`;
+
+    // Aguarda o carregamento do GAPI
+    setTimeout(async () => {
+        let element = document.body;
+
+        let opt = {
+            margin: 0.5,
+            filename: `${nome} - entrega.pdf`,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+
+        const pdfBlob = await html2pdf().set(opt).from(element).output('blob');
+
+        await authenticate();
+        await loadClient();
+        uploadFile(pdfBlob, `${nome} - entrega.pdf`);
+    }, 2000); // espera 2s para o GAPI carregar
+
+    
+
+
+    
+    
 });
