@@ -82,34 +82,65 @@ document.addEventListener("DOMContentLoaded", function () {
     let ctx = canvas.getContext("2d");
     let desenhando = false;
 
+    // Funções auxiliares para toque
+    function getTouchPos(canvas, touchEvent) {
+        let rect = canvas.getBoundingClientRect();
+        return {
+            x: touchEvent.touches[0].clientX - rect.left,
+            y: touchEvent.touches[0].clientY - rect.top
+        };
+    }
 
-    // Inicia o desenho
+    // Mouse Events (PC)
     canvas.addEventListener("mousedown", (e) => {
         desenhando = true;
         ctx.beginPath();
         ctx.moveTo(e.offsetX, e.offsetY);
     });
 
-    // Continua desenhando
     canvas.addEventListener("mousemove", (e) => {
         if (!desenhando) return;
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
     });
 
-    // Para o desenho
     canvas.addEventListener("mouseup", () => {
         desenhando = false;
     });
 
-    // Botão para limpar a assinatura
+    canvas.addEventListener("mouseleave", () => {
+        desenhando = false;
+    });
+
+    // Touch Events (Celular)
+    canvas.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // evita scroll
+        desenhando = true;
+        let pos = getTouchPos(canvas, e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+    });
+
+    canvas.addEventListener("touchmove", (e) => {
+        e.preventDefault(); // evita scroll
+        if (!desenhando) return;
+        let pos = getTouchPos(canvas, e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+    });
+
+    canvas.addEventListener("touchend", () => {
+        desenhando = false;
+    });
+
+    // Limpar assinatura
     document.getElementById("limparAssinatura").addEventListener("click", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
-    // Botão para salvar a assinatura no localStorage
+    // Salvar assinatura
     document.getElementById("salvarAssinatura").addEventListener("click", () => {
-        let assinaturaDataURL = canvas.toDataURL(); // Converte para imagem
+        let assinaturaDataURL = canvas.toDataURL();
         localStorage.setItem("assinaturaColaborador", assinaturaDataURL);
         alert("Assinatura salva com sucesso!");
     });
@@ -120,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Recuperar assinatura salva, se houver
+    // Carrega assinatura anterior se existir
     let assinaturaSalva = localStorage.getItem("assinaturaColaborador");
     if (assinaturaSalva) {
         let img = new Image();

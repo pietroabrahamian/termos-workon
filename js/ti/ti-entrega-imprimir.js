@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async function(){
         </table>
         <img src="${assinatura}">
         `
+        
     
     // let element = document.body;
 
