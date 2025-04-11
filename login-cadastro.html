@@ -12,12 +12,19 @@
 
         </section>
         <section class="right-main">
-            <form action="" id="formLogin">
+            <form  id="formLogin">
                 <div class="titulo-login">
+                    <h1>Log in</h1>
+                    <h2>Não possui uma conta? <span id="mudarPCadastro">Crie aqui</span></h2>
                 </div>
                 <div class="inputs-login">
+                    <input type="email" name="emailUsuario" id="emailUsuario" placeholder="Insira seu email corporativo">
+                    <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Insira sua senha">
                 </div>
                 <div class="fazer-login">
+                    <button>Log in</button>
+                    <p>ou entre com</p>
+                    <button id="entrarOutlook"> <img src="assets/img/outlook-logo.svg" alt="">Outlook</button>
                 </div>
             </form>
         
@@ -33,11 +40,12 @@
                 </div>
                 <div class="fazer-cadastro">
                     <button>Crie sua conta</button>
-                    <p>ou entre com</p>
-                    <button id="entrarOutlook"> <img src="assets/img/outlook-logo.svg" alt="">Outlook</button>
+                    <p>ou cadastr-se com</p>
+                    <button id="cadastrarOutlook"> <img src="assets/img/outlook-logo.svg" alt="">Outlook</button>
                 </div>
             </form>
         </section>
     </main>
+    <script src="login-cadastro.js"></script>
 </body>
 </html>
