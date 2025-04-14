@@ -73,93 +73,44 @@ document.addEventListener("DOMContentLoaded", async function(){
         `
         
     
-    // let element = document.body;
-
-    //     let opt = {
-    //     margin:       0.5,
-    //     filename:     `${nome} - entrega.pdf`,
-    //     image:        { type: 'jpeg', quality: 0.98 },
-    //     html2canvas:  { scale: 2 },
-    //     jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-    //     };
-
-    //      html2pdf().set(opt).from(element).save();
-
-
-  
-    const CLIENT_ID = '49033420906-kcfbk77167nnf3i9ifvmak138hc42l5u.apps.googleusercontent.com'; // Substitua pelo seu ID real
-    const SCOPES = 'https://www.googleapis.com/auth/drive.file';
-
-    function initGoogleAPI() {
-        gapi.load("client:auth2", () => {
-            gapi.auth2.init({ client_id: CLIENT_ID });
-        });
-    }
-
-    async function authenticate() {
-        await gapi.auth2.getAuthInstance().signIn({ scope: SCOPES });
-        console.log("Autenticado com sucesso!");
-    }
-
-    async function loadClient() {
-        await gapi.client.load("https://content.googleapis.com/discovery/v1/apis/drive/v3/rest");
-        console.log("Cliente da API carregado");
-    }
-
-    function uploadFile(blob, nomeArquivo) {
-        const fileMetadata = {
-            name: nomeArquivo,
-            mimeType: 'application/pdf'
-        };
-
-        const form = new FormData();
-        form.append("metadata", new Blob([JSON.stringify(fileMetadata)], { type: "application/json" }));
-        form.append("file", blob);
-
-        fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
-            method: "POST",
-            headers: new Headers({ "Authorization": "Bearer " + gapi.auth.getToken().access_token }),
-            body: form,
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Arquivo enviado:", data);
-                alert("PDF enviado para o Google Drive com sucesso!");
-            })
-            .catch(error => console.error("Erro ao enviar:", error));
-    }
-
-    // Inicializa o Google API
-    initGoogleAPI();
-
-    // ... (os demais dados iguais ao seu original)
-
-    // Monta o termo (seu conteúdo continua igual)
-    document.title = `${nome} - Termo de Entrega`;
-    // divMain = document.getElementById("main").innerHTML = `...seu HTML...`;
-
-    // Aguarda o carregamento do GAPI
-    setTimeout(async () => {
         let element = document.body;
 
         let opt = {
-            margin: 0.5,
-            filename: `${nome} - entrega.pdf`,
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+          margin: 0.5,
+          filename: `${nome} - entrega.pdf`,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         };
+        
+        html2pdf().set(opt).from(element).outputPdf('blob').then(async function (pdfBlob) {
+          // Salva localmente
+          html2pdf().set(opt).from(element).save();
+        
+          const formData = new FormData();
+          formData.append("nome", nome);
+          formData.append("email", email);
+          formData.append("pdf", pdfBlob, `${nome}-entrega.pdf`);
+        
+          try {
+            const response = await fetch("http://localhost:3000/enviar-termo", {
+              method: "POST",
+              body: formData
+            });
+        
+            if (response.ok) {
+              alert("Termo enviado com sucesso!");
+            } else {
+              alert("Erro ao enviar termo.");
+            }
+          } catch (error) {
+            alert("Erro na requisição: " + error.message);
+          }
+        });
+        
 
-        const pdfBlob = await html2pdf().set(opt).from(element).output('blob');
+          
+        
 
-        await authenticate();
-        await loadClient();
-        uploadFile(pdfBlob, `${nome} - entrega.pdf`);
-    }, 2000); // espera 2s para o GAPI carregar
-
-    
-
-
-    
     
 });
