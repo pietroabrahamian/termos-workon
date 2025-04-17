@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async function(){
           formData.append("pdf", pdfBlob, `${nome}-entrega.pdf`);
         
           try {
-            const response = await fetch("http://localhost:3000/enviar-termo", {
+            const response = await fetch("http://localhost:5500/send-termo", {
               method: "POST",
               body: formData
             });

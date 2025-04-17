@@ -6,12 +6,17 @@
     font-family: "workon-bold";
     src: url(/fonte_work/Arboria-Bold.ttf);
 }
+
+/* ------------------DECLARAÇÕES GERAIS | JESUS TE AMA------------------ */
 *{
     font-family: "workon";
 }
+
 span{
     font-family: "workon-bold";
 }
+
+/* ------------------MAIN | JESUS TE AMA------------------ */
 #main{
     display: flex;
     flex-direction: column;
@@ -23,4 +28,5 @@ table{
 img{
     margin: 3%;
     border: 1px solid black;
+    width: 30%;
 }

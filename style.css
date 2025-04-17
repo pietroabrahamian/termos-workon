@@ -9,13 +9,20 @@
     box-sizing: border-box;
     font-family: workon;
 }
+
+/* ------------------BODY | JESUS TE AMA------------------ */
 body {
-    background: linear-gradient(135deg, 
+    /* background: linear-gradient(135deg, 
     #0083B1, #0076A9, #006DA8, #006CA2, #00689B, 
-    #00629D, #0067A3, #006198, #005C9A, #005A94);
+    #00629D, #0067A3, #006198, #005C9A, #005A94); */
+    background-image: url(assets/img/fundo_work_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
-
+/* ------------------ MAIN | JESUS TE AMA------------------ */
 main{
     width: 100vw;
     height: 100vh;
@@ -31,6 +38,7 @@ a{
     text-decoration: none;
 }
 
+/* ------------------ LEFT-MAIN | JESUS TE AMA------------------ */
 .left-main{
     width: 48vw;
     height: 100vh;
@@ -50,6 +58,8 @@ h1 img{
     width: 25%;
     
 }
+
+/* -------------INFO-MAIS | JESUS TE AMA-------------- */
 .info-mais{
     width: 20%;
     height: 7%;
@@ -68,6 +78,7 @@ h1 img{
 
     border-bottom-left-radius: 5px;
 }
+/* ---------- ADD-TERMO | JESUS TE AMA---------- */
 .add-termo{
     width: 100%;
     height: 45%;
@@ -128,7 +139,7 @@ h1 img{
     transition: 0.3s;
 }
 
-
+/* ------------------ RIGHT-MAIN | JESUS TE AMA------------------ */
 .right-main{
     width: 50vw;
     height: 100vh;
@@ -234,6 +245,9 @@ h1 img{
     width: 10%;
     
 }
+
+/* ------------------ RESPONSIVIDADE | JESUS TE AMA------------------ */ 
+
 @media screen and (max-width: 768px) {
     main{
         flex-direction: column;

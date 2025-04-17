@@ -3,6 +3,7 @@
     src: url(/fonte_work/Arboria-Book.ttf);
 }
 
+/* ------------------ DECLARAÇÕES GERAIS | JESUS TE AMA------------------ */
 * {
     padding: 0;
     margin: 0;
@@ -10,33 +11,32 @@
     font-family: workon;
 }
 
+/* ------------------ DECLARAÇÃO DE CORES | JESUS TE AMA------------------ */
 :root{
     --fundo: #FEFAF3;
     --texto: #005A9E;
 }
 
+/* ------------------ BODY | JESUS TE AMA------------------ */
 body {
     background-color: var(--fundo);
 
     /* background-image: url(assets/img/IMG_5296.jpg); */
-    background-image: url(assets/img/IMG_5303.jpg);
+    background-image: url(assets/img/fundo_work_1.jpg);
     /* background-position: center;   */
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
+/* ------------------ MAIN | JESUS TE AMA------------------ */
 main{
     width: 100vw;
     height: 100vh;
     display: flex;
 }
-/* ------------------ LEFT MAIN------------------ */
 
-.left-main{
-    width: 0%;
-    height: 100%;
-}
-/* ------------------RIGHT MAIN------------------ */
+/* ------------------RIGHT MAIN | JESUS TE AMA------------------ */
 
 .right-main{
     width: 100%;
@@ -56,7 +56,7 @@ main{
     text-align: center;
 }
 
-/* ------------------FORM LOGIN------------------ */
+/* ------------------FORM LOGIN | JESUS TE AMA------------------ */
 
 #formLogin {
     display: flex;
@@ -65,7 +65,7 @@ main{
     display: none;
 }
 
-/* ------------------FORM CADASTRO------------------ */
+/* ------------------FORM CADASTRO | JESUS TE AMA------------------ */
 
 #formCadastro, #formLogin{
     width: 30%;
@@ -116,7 +116,7 @@ main{
     box-shadow: 1px 1px 5px #3399FF	, -1px -1px 5px #3399FF	;
 }
 
-/* ------------------BUTTON FAZER CADASTRO------------------ */
+/* ------------------BUTTON FAZER CADASTRO | JESUS TE AMA------------------ */
 .fazer-cadastro, .fazer-login{
     width: 20vw;
     height: 30%;
@@ -153,4 +153,21 @@ main{
 }
 #cadastrarOutlook > img, #entrarOutlook > img {
     width: 5%;
+}
+
+/* ------------------ RESPONSIVIDADE | JESUS TE AMA------------------ */
+@media screen and (max-width: 768px) {
+    .right-main{
+        left: 0;
+    }
+    #formCadastro, #formLogin{
+        width: 90%;
+        height: 60%;
+    }
+    .inputs-cadastro, .inputs-login{
+        width: 90%;
+    }
+    .fazer-cadastro, .fazer-login{
+        width: 90%;
+    }
 }
