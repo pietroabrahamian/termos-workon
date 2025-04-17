@@ -3,6 +3,7 @@
     src: url(/fonte_work/Arboria-Book.ttf);
 }
 
+/* ------------------ DECLARAÇÕES GERAIS | JESUS TE AMA------------------ */
 * {
     padding: 0;
     margin: 0;
@@ -12,9 +13,6 @@
 
 /* ------------------BODY | JESUS TE AMA------------------ */
 body {
-    /* background: linear-gradient(135deg, 
-    #0083B1, #0076A9, #006DA8, #006CA2, #00689B, 
-    #00629D, #0067A3, #006198, #005C9A, #005A94); */
     background-image: url(assets/img/fundo_work_2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,10 +25,6 @@ main{
     width: 100vw;
     height: 100vh;
     display: flex;
-    /* background: linear-gradient(135deg, 
-    #0083B1, #0076A9, #006DA8, #006CA2, #00689B,  */
-    /* #00629D, #0067A3, #006198, #005C9A, #005A94); */
-    /* background-color: #005A9E; */
 }
 
 a{
@@ -46,7 +40,6 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     color: #ffffff; 
 }
 h1{
@@ -66,7 +59,6 @@ h1 img{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border-left: 1px solid white; */
     padding-left: 0.2rem;
 }
 .info-mais span{
@@ -84,7 +76,6 @@ h1 img{
     height: 45%;
     display: flex;
     align-items: center;
-    /* border: 1px solid black; */
 }
 #addTermo {
     width: 50%;
@@ -208,7 +199,6 @@ h1 img{
     text-align: center;
     font-size: 3rem;
     margin: 1.3rem;
-    /* color: rgb(218, 244, 237); */
     color: white;
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
   }

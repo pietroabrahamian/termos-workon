@@ -20,10 +20,7 @@
 /* ------------------ BODY | JESUS TE AMA------------------ */
 body {
     background-color: var(--fundo);
-
-    /* background-image: url(assets/img/IMG_5296.jpg); */
     background-image: url(assets/img/fundo_work_1.jpg);
-    /* background-position: center;   */
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
