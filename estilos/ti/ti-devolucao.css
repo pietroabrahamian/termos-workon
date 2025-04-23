@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+
+/* ------------------ DECLARAÇÕES GERAIS | JESUS TE AMA------------------ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: workon;
+}
+
+/*------------------DECLARANDO CORES FIXAS | JESUS TE AMA------------------ */
+:root{
+    --cor-principal: #047cc7;
+    --contraste-principal: #035d95;
+}
+
+/* ------------------ BODY | JESUS TE AMA------------------ */
+body {
+    overflow: hidden;
+}
+
+/* ------------------ HEADER | JESUS TE AMA------------------ */
+header {
+    width: 100vw;
+    height: 10vh;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ------------------ MAIN | JESUS TE AMA------------------ */
+main{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------ SECTION | JESUS TE AMA------------------ */
+a {
+    position: absolute;
+    left: 2vw; 
+    top: 2vh;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------ FORM | JESUS TE AMA------------------ */
+form{
+    width: 25vw;
+    height: 80vh;
+    padding: 1rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.termo {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.gp-inputs-devolucao {
+    display: flex;
+    flex-direction: column;
+}
+.gp-inputs-devolucao > input {
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 5px ;
+    border: 0.5px solid rgba(0, 0, 0, 0.471);
+}
+.gp-inputs-devolucao > input:focus {
+    outline: 2px solid var(--contraste-principal);
+}
+label{
+    margin: 0.2rem;
+}
+.gp-acessorios{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+select{
+    border-radius: 5px;
+    padding: 0.3rem;
+    transition: 0.2s;
+}
+select:hover{
+    box-shadow: 3px 5px 1px #C8C8C8;
+    transform: translateY(-10px);
+    transition: 0.2s;
+}
+
+/* -------------BUTTON------------------ */
+#submit {
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    background-color: var(--cor-principal);
+    color: white;
+    transition: 0.5s;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-size: cover; 
+}
+#submit::before{
+    content: "Gerar Termo";
+}
+#submit:hover{
+    background-image: url(/assets/img/logo_workon_negativo.png);
+    background-position: center;
+    color: transparent;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#submit::after{
+    content: "";
+}
+
+/*------------------ASSINATURA------------------ */
+
+#box-flutuante-assinatura{
+    display: none;
+}
+#box-flutuante-assinatura {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    align-items: center;
+    justify-content: center;
+}
+#assinatura {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.buttons-assinatura{
+    margin-top: 1rem;
+    width: 100%;
+    display: inline;
+}
+.buttons-assinatura > button{
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.buttons-assinatura > button:hover{
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#limparAssinatura{
+    background-color: red;
+}
+#salvarAssinatura{
+    background-color: green;
+}
+#netPageImprimir{
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    background-color: var(--cor-principal);
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#netPageImprimir:hover{
+    transform: scale(0.9);
+    transition: 0.5s;
+}

@@ -73,6 +73,40 @@ document.addEventListener("DOMContentLoaded", async function(){
         `
         
     
+        // let element = document.body;
+
+        // let opt = {
+        //   margin: 0.5,
+        //   filename: `${nome} - entrega.pdf`,
+        //   image: { type: 'jpeg', quality: 0.98 },
+        //   html2canvas: { scale: 2 },
+        //   jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        // };
+        
+        // html2pdf().set(opt).from(element).outputPdf('blob').then(async function (pdfBlob) {
+        //   // Salva localmente
+        //   html2pdf().set(opt).from(element).save();
+        
+        //   const formData = new FormData();
+        //   formData.append("nome", nome);
+        //   formData.append("email", email);
+        //   formData.append("pdf", pdfBlob, `${nome}-entrega.pdf`);
+        
+        //   // try {
+        //   //   const response = await fetch("http://localhost:5500/send-termo", {
+        //   //     method: "POST",
+        //   //     body: formData
+        //   //   });
+        
+        //   //   if (response.ok) {
+        //   //     alert("Termo enviado com sucesso!");
+        //   //   } else {
+        //   //     alert("Erro ao enviar termo.");
+        //   //   }
+        //   // } catch (error) {
+        //   //   alert("Erro na requisição: " + error.message);
+        //   // }
+        // });
         let element = document.body;
 
         let opt = {
@@ -82,35 +116,48 @@ document.addEventListener("DOMContentLoaded", async function(){
           html2canvas: { scale: 2 },
           jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         };
-        
+
         html2pdf().set(opt).from(element).outputPdf('blob').then(async function (pdfBlob) {
-          // Salva localmente
-          html2pdf().set(opt).from(element).save();
-        
-          const formData = new FormData();
-          formData.append("nome", nome);
-          formData.append("email", email);
-          formData.append("pdf", pdfBlob, `${nome}-entrega.pdf`);
-        
-          try {
-            const response = await fetch("http://localhost:5500/send-termo", {
-              method: "POST",
+          // Converte o Blob para Base64
+          const reader = new FileReader();
+          reader.onloadend = function() {
+            const base64PDF = reader.result.split(',')[1]; // Pega o conteúdo base64 do Blob
+
+            // Agora você pode enviar o base64 para o servidor, salvar localmente ou usar da forma que preferir
+
+            // Exemplo: Enviar o base64 para o servidor via POST
+            const formData = new FormData();
+            formData.append("nome", nome);
+            formData.append("email", email);
+            formData.append("pdfBase64", base64PDF);
+
+            // Aqui você pode enviar para o seu servidor
+            fetch('/seu-endpoint', {
+              method: 'POST',
               body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log("PDF enviado com sucesso!", data);
+            })
+            .catch(error => {
+              console.error("Erro ao enviar PDF:", error);
             });
-        
-            if (response.ok) {
-              alert("Termo enviado com sucesso!");
-            } else {
-              alert("Erro ao enviar termo.");
-            }
-          } catch (error) {
-            alert("Erro na requisição: " + error.message);
-          }
+
+            // Caso queira salvar o PDF como arquivo base64 no cliente:
+            const base64Link = document.createElement('a');
+            base64Link.href = `data:application/pdf;base64,${base64PDF}`;
+            base64Link.download = `${nome} - entrega.pdf`;
+            base64Link.click(); // Isso vai iniciar o download do PDF base64
+          };
+
+          // Lê o Blob como base64
+          reader.readAsDataURL(pdfBlob);
         });
-        
 
-          
-        
 
-    
-});
+                  
+                
+
+            
+        });

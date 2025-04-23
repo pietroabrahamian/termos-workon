@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "workon";
+    src: url(/fonte_work/Arboria-Book.ttf);
+}
+@font-face {
+    font-family: "workon-bold";
+    src: url(/fonte_work/Arboria-Bold.ttf);
+}
+
+/* ------------------DECLARAÇÕES GERAIS | JESUS TE AMA------------------ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "workon";
+}
+
+span{
+    font-family: "workon-bold";
+}
+
+/* ------------------MAIN | JESUS TE AMA------------------ */
+#main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.texto-termo-devolucao {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}
+table{
+    width: 60%;
+    font-size: 1.1rem;
+}
+img{
+    margin: 3%;
+    border: 1px solid black;
+    width: 30%;
+}

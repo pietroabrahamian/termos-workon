@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos/ti/ti-devolucao.css">
+    <title>TI - Devolução</title>
+</head>
+<body>
+    <header>
+         <!-- JESUS TE AMA -->
+        <h1>TI - Devolução</h1>
+    </header>
+    <main>
+        <section>
+            <form id="formulario">
+                <div class="termo">
+                    <a href="/index.html"><img src="/assets/img/arrow-right.png" alt="" width="50%" class="voltar"></a>
+                    <div class="gp-inputs-devolucao">
+                        <label for="nome-colaborador">Nome do Colaborador</label>
+                        <input type="text" name="nome-colaborador" id="nome-colaborador" placeholder="Nome Sobrenome">
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <label for="data">Data</label>
+                        <input type="date" name="data" id="data">
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <label for="recebedor-ti">Recebedor TI</label>
+                        <select name="recebedor-ti" id="recebedor-ti">
+                            <option value="">Selecione uma empresa</option>
+                            <option value="fabia">Fabia Martins</option>
+                            <option value="carmnoa">Andre Carmona</option>
+                            <option value="pedro">Pedro Tamandaré</option>
+                            <option value="fernando">Fernando Carvalho</option>
+                        </select>
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <label for="nome-maquina">Nome da Máquina</label>
+                        <input type="text" name="nome-maquina" id="nome-maquina" placeholder="WO-123456">
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <label for="patrimonio">Patrimônio</label>
+                        <input type="text" name="patrimonio" id="patrimonio" placeholder="123465">
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <label for="locadora">Locadora</label>
+                        <input type="text" name="locadora" id="locadora" placeholder="EMC, Aluga...">
+                    </div>
+                    <div class="gp-inputs-devolucao">
+                        <div class="gp-acessorios">
+                            <label for="carregador">Carregador</label>
+                            <input type="checkbox" name="carregador" id="carregador">
+                        </div>
+                        <div class="gp-acessorios">
+                            <label for="mochila">Mochila</label>
+                            <input type="checkbox" name="mochila" id="mochila">
+                        </div>
+                    </div>
+                    <div id="box-flutuante-assinatura">
+                        <div id="assinatura">
+                            <p>Assine abaixo:</p>
+                            <canvas id="assinaturaCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+                            <br>
+                            <div class="buttons-assinatura">
+                                <button id="limparAssinatura">Limpar</button>
+                                <button id="salvarAssinatura">Salvar Assinatura</button>
+                            </div>
+                            <button id="netPageImprimir">Imprimir Termo</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" id="submit"></button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+    </footer>
+    <script src="/js/ti/ti-devolucao.js"></script>
+</body>
+</html>
