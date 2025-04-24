@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", async function(){
           const reader = new FileReader();
           reader.onloadend = function() {
             const base64PDF = reader.result.split(',')[1]; // Pega o conteúdo base64 do Blob
+            console.log(base64PDF);
 
             // Agora você pode enviar o base64 para o servidor, salvar localmente ou usar da forma que preferir
 
