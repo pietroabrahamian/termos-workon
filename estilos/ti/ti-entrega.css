@@ -33,8 +33,8 @@ section{
 a {
    position: absolute;
    left: 2vw; 
-   top: 2vh;
-
+   top: 4vh;
+   color: var(--contraste-principal);
 }
 
 /*------------------FORMULÁRIO | JESUS TE AMA------------------ */

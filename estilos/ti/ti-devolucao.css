@@ -17,16 +17,14 @@
     --contraste-principal: #035d95;
 }
 
-/* ------------------ BODY | JESUS TE AMA------------------ */
-body {
-    overflow: hidden;
-}
-
 /* ------------------ HEADER | JESUS TE AMA------------------ */
 header {
     width: 100vw;
     height: 10vh;
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -43,7 +41,8 @@ main{
 a {
     position: absolute;
     left: 2vw; 
-    top: 2vh;
+    top: 4vh;
+    color: var(--contraste-principal);
 }
 
 section {
@@ -53,6 +52,7 @@ section {
     align-items: center;
     justify-content: center;
 }
+
 
 /* ------------------ FORM | JESUS TE AMA------------------ */
 form{
@@ -195,4 +195,31 @@ select:hover{
 #netPageImprimir:hover{
     transform: scale(0.9);
     transition: 0.5s;
+}
+
+/* ------------------RESPONSIVIDADE | JESUS TE AMA------------------ */
+@media screen and (max-width: 768px) {
+    main {
+        height: 80vh;
+    }
+    section{
+        height: 80vh;
+    }
+    form{
+        border: none;
+        width: 100vw;
+        height: 80vh;
+        padding: 0;
+    }
+    .termo{
+        height: 100%;
+        flex-direction: column;
+    }
+    .termo-maquina, .termo-colaborador{
+        width: 100%;
+        height: 50%;
+    }
+    .termo-colaborador{
+        border: none;
+    }
 }
