@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="/estilos/ti/ti-entrega-imprimir.css">
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <title>Imprimir - Termo de Entrega</title>
 </head>
 <body>
+    <div id="box-flutuante-agradecimento">
+        <div class="agradecimento">
+            <i class="fa-regular fa-circle-check fa-2xl"></i>            
+            <div class="text-agradecimento">
+                <h2>Termo de Entrega Assinado!</h2>
+                <p>Muito obrigado! Seu termo já foi enviado ao TI e será anexado ao processo. <br> Caso queira uma cópia do seu termo, por favor solicitar ao TI.</p>
+            </div>
+            <div id="fechar-agradecimento"><i class="fa-solid fa-xmark fa-xl" style="color: #000000;"></i></div>
+        </div>
+    </div>
     <div id="main"></div>
     <script src="/js/ti/ti-entrega-imprimir.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

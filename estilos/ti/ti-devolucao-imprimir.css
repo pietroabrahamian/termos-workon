@@ -45,3 +45,55 @@ img{
     border: 1px solid black;
     width: 30%;
 }
+
+/* ------------------AGRADECIMENTO | JESUS TE AMA------------------ */
+#box-flutuante-agradecimento{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+}
+.agradecimento{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.text-agradecimento h2{
+    margin-bottom: 0.5rem;
+    color: rgb(0, 149, 0);
+}
+i {
+    color: rgb(0, 149, 0);
+    margin: 0.8rem;
+}
+#fechar-agradecimento{
+    height: 100%;
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: -10px 1px 10px rgba(0, 0, 0, 0.034);
+}
+
+@media screen and (max-width: 768px) {
+    .agradecimento{
+        width: 90%;
+        font-size: 1rem;
+    }
+    #fechar-agradecimento{
+        display: none;
+    }
+}

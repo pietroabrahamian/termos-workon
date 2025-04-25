@@ -85,4 +85,15 @@ document.addEventListener("DOMContentLoaded", async function(){
         // Lê o Blob como base64
         reader.readAsDataURL(pdfBlob);
         });
+    
+    let boxFlutuante = document.getElementById("box-flutuante-agradecimento")
+    setTimeout(() => {
+        boxFlutuante.style.display = "flex";
+    },3000);
+    boxFlutuante.addEventListener("click", function(event){
+        boxFlutuante.style.display = "none";
+    })
+    document.getElementById("fechar-agradecimento").addEventListener*"click", function(event){
+        boxFlutuante.style.display = "none";
+    }
 });

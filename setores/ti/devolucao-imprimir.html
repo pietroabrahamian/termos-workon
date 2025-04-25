@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="/estilos/ti/ti-devolucao-imprimir.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <title>Imprimir - Termo de Devolução</title>
 </head>
 <body>
-    <div id="main">
-        <!-- <h1>Devolução</h1>
-        <div class="texto-termo-devolucao">
-            <p>Declaro que no dia  <span>${data}</span>, estou realizando a devolução do notebook.</p>
-            <p>Nome do Colaborador: <span>${nome}</span></p>
-            <p>Assinatura do colaborador:</p>
+    <div id="box-flutuante-agradecimento">
+        <div class="agradecimento">
+            <i class="fa-regular fa-circle-check fa-2xl"></i>            
+            <div class="text-agradecimento">
+                <h2>Termo de Entrega Assinado!</h2>
+                <p>Muito obrigado! Seu termo já foi enviado ao TI e será anexado ao processo. <br> Caso queira uma cópia do seu termo, por favor solicitar ao TI.</p>
+            </div>
+            <div id="fechar-agradecimento"><i class="fa-solid fa-xmark fa-xl" style="color: #000000;"></i></div>
         </div>
-        <img src="${assinatura}" alt="">
-        <p>Recebdor TI: <span>${recebedorTI}</span></p>
-        <table border="1">
-            <tr>
-                <th>Objeto</th>
-                <th>Opção</th>
-                <th>Identificação</th>
-            </tr>
-            <tr>
-                <td>Carregador</td>
-                <td><span>${carregador}</span></td>
-                <td><span>${nomeMaquina}</span></td>
-            </tr>
-            <tr>
-                <td>Mochila</td>
-                <td><span>${mochila}</span></td>
-                <td><span>${locadora}-${patrimonio}</span></td>
-            </tr>
-        </table> -->
     </div>
+    <div id="main"></div>
     <link rel="stylesheet" href="/setores/ti/devolucao-imprimir.html">
     <script src="/js/ti/ti-devolucao-imprimir.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
