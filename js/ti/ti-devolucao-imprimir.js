@@ -54,6 +54,16 @@ document.addEventListener("DOMContentLoaded", async function(){
         reader.onloadend = function() {
             const base64PDF = reader.result.split(',')[1]; // Pega o conteúdo base64 do Blob
             console.log(base64PDF);
+            let boxFlutuante = document.getElementById("box-flutuante-agradecimento")
+            setTimeout(() => {
+                boxFlutuante.style.display = "flex";
+            },3000);
+            boxFlutuante.addEventListener("click", function(event){
+                boxFlutuante.style.display = "none";
+            })
+            document.getElementById("fechar-agradecimento").addEventListener*"click", function(event){
+                boxFlutuante.style.display = "none";
+            }
 
             // Agora você pode enviar o base64 para o servidor, salvar localmente ou usar da forma que preferir
 
@@ -86,14 +96,4 @@ document.addEventListener("DOMContentLoaded", async function(){
         reader.readAsDataURL(pdfBlob);
         });
     
-    let boxFlutuante = document.getElementById("box-flutuante-agradecimento")
-    setTimeout(() => {
-        boxFlutuante.style.display = "flex";
-    },3000);
-    boxFlutuante.addEventListener("click", function(event){
-        boxFlutuante.style.display = "none";
-    })
-    document.getElementById("fechar-agradecimento").addEventListener*"click", function(event){
-        boxFlutuante.style.display = "none";
-    }
 });
