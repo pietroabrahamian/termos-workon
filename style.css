@@ -37,6 +37,7 @@ a{
     width: 48vw;
     height: 100vh;
     padding-left: 1rem;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,19 +53,6 @@ h1 img{
     
 }
 
-/* -------------INFO-MAIS | JESUS TE AMA-------------- */
-.info-mais{
-    width: 20%;
-    height: 7%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 0.2rem;
-}
-.info-mais > span{
-    font-size: 1.3rem;
-    color: #FFF89A;
-}
 /* ---------- ADD-TERMO | JESUS TE AMA---------- */
 .cssbuttons-io-button {
     width: fit-content;
