@@ -294,6 +294,19 @@ h1 img{
         font-size: 0.7rem;
         align-items: center;
     }
-
-
+}
+@media screen and (max-width: 1366px) {
+    .card{
+        height: 9rem;
+    }
+    .card h2 {
+        font-size: 2.5rem;
+    }
+    .box-flutuante-add-termo{
+        height: 13vh;
+        font-size: 0.9rem;
+    }
+    .button-termo {
+        width: 70%;
+    }
 }
