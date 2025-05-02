@@ -21,6 +21,7 @@
 main{
     width: 100vw;
     height: 90vh;
+
 }
 
 section{
@@ -236,4 +237,42 @@ select:hover{
     .termo-colaborador{
         border: none;
     }
+}
+@media screen and (min-width: 1366px) {
+    main {
+        height: 100vh;
+    }
+    .gp-input-maquina > input{
+        height: 30px;
+    }
+    label{
+        font-size: 0.8rem;
+    }
+
+}
+@media screen and (min-width: 1920px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .gp-input-maquina > input{
+        height: 40px;
+    }
+    label{
+        font-size: 1.2rem;
+    }
+    #submit {
+        width: 20rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+    select {
+        font-size: 1.2rem;
+    }
+    .inputs-colaborador {
+        justify-content: space-evenly;
+    }
+
 }

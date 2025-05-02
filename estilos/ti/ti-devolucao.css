@@ -223,3 +223,38 @@ select:hover{
         border: none;
     }
 }
+@media screen and (min-width: 1366px) {
+    form {
+        justify-content: space-around;
+    }
+    .gp-inputs-devolucao > input {
+        height: 30px;
+    }
+    label{
+        font-size: 0.8rem;
+    }
+        
+}
+@media screen and (min-width: 1920px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .termo {
+        height: 80%;
+    }
+    .gp-inputs-devolucao > input {
+        height: 45px;
+    }
+    label{
+        font-size: 1.4rem;
+    }
+    #submit {
+        width: 20rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+    select {
+        font-size: 1.2rem;
+    }
+
+}
